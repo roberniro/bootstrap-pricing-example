@@ -72,7 +72,7 @@ function App() {
               <button className="button blue">Get started</button>
             </div>
           </div>
-          <span className="card">
+          <div className="card">
             <div className="name">Enterprise</div>
             <div className="info">
               <div className="permonth">
@@ -85,7 +85,7 @@ function App() {
               <div className="content">Help center access</div>
               <button className="button blue">Contact us</button>
             </div>
-          </span>
+          </div>
         </div>
       </div>
 
