@@ -1,4 +1,5 @@
 import "./App.css";
+import Card from "./Card";
 
 function App() {
   return (
@@ -43,50 +44,8 @@ function App() {
             Bootstrap components and utilities with little customization.
           </div>
         </div>
-        <div className="container">
-          <div className="card">
-            <div className="name">Free</div>
-            <div className="info">
-              <div className="permonth">
-                <span className="price">$0</span>
-                <span className="month">/ mo</span>
-              </div>
-              <div className="content">10 users included</div>
-              <div className="content">2 GB of storage</div>
-              <div className="content">Email support</div>
-              <div className="content">Help center access</div>
-              <button className="button white">Sign up for free</button>
-            </div>
-          </div>
-          <div className="card">
-            <div className="name">Pro</div>
-            <div className="info">
-              <div className="permonth">
-                <span className="price">$15</span>
-                <span className="month">/ mo</span>
-              </div>
-              <div className="content">20 users included</div>
-              <div className="content">10 GB of storage</div>
-              <div className="content">Priority email support</div>
-              <div className="content">Help center access</div>
-              <button className="button blue">Get started</button>
-            </div>
-          </div>
-          <div className="card">
-            <div className="name">Enterprise</div>
-            <div className="info">
-              <div className="permonth">
-                <span className="price">$29</span>
-                <span className="month">/ mo</span>
-              </div>
-              <div className="content">30 users included</div>
-              <div className="content">15 GB of storage</div>
-              <div className="content">Phone and email support</div>
-              <div className="content">Help center access</div>
-              <button className="button blue">Contact us</button>
-            </div>
-          </div>
-        </div>
+
+        <Card />
       </div>
 
       <div className="footer">
