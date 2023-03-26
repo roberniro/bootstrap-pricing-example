@@ -1,4 +1,4 @@
-import "./App.css";
+import "./Card.css";
 
 const cardData = [
   {
@@ -39,7 +39,7 @@ const cardData = [
   }
 ];
 
-function Card() {
+const Card = () => {
   return (
     <div className="container">
       {cardData.map((value, index) => (
@@ -61,6 +61,6 @@ function Card() {
       ))}
     </div>
   );
-}
+};
 
 export default Card;
