@@ -19,30 +19,30 @@ const Card = () => {
       btContent: "Sign up for free"
     },
     {
-      name: "Free",
-      price: "$0",
+      name: "Pro",
+      price: "$15",
       content: [
-        "10 users included",
-        "2 GB of storage",
-        "Email Support",
+        "20 users included",
+        "10 GB of storage",
+        "Priority email Support",
         "Help center access"
       ],
       btClass: "button blue",
       btAction: null,
-      btContent: "Sign up for free"
+      btContent: "Get started"
     },
     {
-      name: "Free",
-      price: "$0",
+      name: "Enterprise",
+      price: "$29",
       content: [
-        "10 users included",
-        "2 GB of storage",
-        "Email Support",
+        "30 users included",
+        "15 GB of storage",
+        "Phone and email Support",
         "Help center access"
       ],
       btClass: "button blue",
       btAction: null,
-      btContent: "Sign up for free"
+      btContent: "Contact us"
     }
   ];
 
