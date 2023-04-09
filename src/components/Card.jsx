@@ -2,12 +2,22 @@ import "./Card.css";
 import { useState } from "react";
 
 const Card = () => {
-  const [userNumber, setUserNumber] = useState(0);
+  const [userNumber, setUserNumber] = useState({
+    Free: 0,
+    Pro: 15,
+    Enterprise: 29
+  });
+
+  const btAction = (type) => {
+    setUserNumber((prev) => {
+      return { ...prev, [type]: prev[type] + 1 };
+    });
+  };
 
   const cardData = [
     {
       name: "Free",
-      price: "$" + userNumber,
+      price: "$" + userNumber.Free,
       content: [
         "10 users included",
         "2 GB of storage",
@@ -15,12 +25,12 @@ const Card = () => {
         "Help center access"
       ],
       btClass: "button white",
-      btAction: () => setUserNumber(userNumber + 1),
+      btAction: () => btAction("Free"),
       btContent: "Sign up for free"
     },
     {
       name: "Pro",
-      price: "$15",
+      price: "$" + userNumber.Pro,
       content: [
         "20 users included",
         "10 GB of storage",
@@ -28,12 +38,12 @@ const Card = () => {
         "Help center access"
       ],
       btClass: "button blue",
-      btAction: null,
+      btAction: () => btAction("Pro"),
       btContent: "Get started"
     },
     {
       name: "Enterprise",
-      price: "$29",
+      price: "$" + userNumber.Enterprise,
       content: [
         "30 users included",
         "15 GB of storage",
@@ -41,32 +51,34 @@ const Card = () => {
         "Help center access"
       ],
       btClass: "button blue",
-      btAction: null,
+      btAction: () => btAction("Enterprise"),
       btContent: "Contact us"
     }
   ];
 
   return (
     <div className="container">
-      {cardData.map((value, index) => (
-        <div className="card" key={index}>
-          <div className="name">{value.name}</div>
-          <div className="info">
-            <div className="permonth">
-              <span className="price">{value.price}</span>
-              <span className="month">/ mo</span>
-            </div>
-            {value.content.map((contentValue, contentIndex) => (
-              <div className="content" key={contentIndex}>
-                {contentValue}
+      {cardData.map(
+        ({ name, price, content, btClass, btAction, btContent }, index) => (
+          <div className="card" key={index}>
+            <div className="name">{name}</div>
+            <div className="info">
+              <div className="permonth">
+                <span className="price">{price}</span>
+                <span className="month">/ mo</span>
               </div>
-            ))}
-            <button className={value.btClass} onClick={value.btAction}>
-              {value.btContent}
-            </button>
+              {content.map((contentValue, contentIndex) => (
+                <div className="content" key={contentIndex}>
+                  {contentValue}
+                </div>
+              ))}
+              <button className={btClass} onClick={btAction}>
+                {btContent}
+              </button>
+            </div>
           </div>
-        </div>
-      ))}
+        )
+      )}
     </div>
   );
 };
